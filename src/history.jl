@@ -249,7 +249,7 @@ niters(ch::ConvergenceHistory) = ch.iters
 
 Number of restarts logged in `ConvergenceHistory` `ch`.
 """
-nrests(ch::RestartedHistory) = Int(ceil(ch.iters/ch.restart))
+nrests(ch::RestartedHistory) = Int(cld(ch.iters,ch.restart))
 
 #########
 # Plots #
